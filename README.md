@@ -2,8 +2,9 @@
 
 A responsive web application built with **React**, **Redux Toolkit**, and **Tailwind CSS** that simulates **real-time cryptocurrency price tracking** like CoinMarketCap. This app displays dynamic price movements, percentage changes, and key market stats for top cryptocurrencies using mock data and simulated WebSocket updates.
 
----
+Live->🚀 https://real-time-crypto-price-tracker-seven.vercel.app
 
+---
 ## 🚀 Features
 
 - 🔄 **Real-Time Data Simulation**: Simulates live WebSocket updates every 1–2 seconds using `setInterval`, modifying price, volume, and percent changes.
