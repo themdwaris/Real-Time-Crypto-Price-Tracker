@@ -68,10 +68,5 @@ Make sure you place your SVGs and logo images inside the `public/charts/` and `p
 
 ---
 
-## 📸 Demo Screenshot
-*(Add your screenshot here)*
-
----
-
 > Made with ❤️ using React + Redux + Tailwind
 
