@@ -1,12 +1,77 @@
-# React + Vite
+# 📈 Real-Time Crypto Price Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive web application built with **React**, **Redux Toolkit**, and **Tailwind CSS** that simulates **real-time cryptocurrency price tracking** like CoinMarketCap. This app displays dynamic price movements, percentage changes, and key market stats for top cryptocurrencies using mock data and simulated WebSocket updates.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔄 **Real-Time Data Simulation**: Simulates live WebSocket updates every 1–2 seconds using `setInterval`, modifying price, volume, and percent changes.
+- 🧠 **Redux-Powered State**: All state is managed globally using Redux Toolkit and optimized with selectors.
+- 📊 **Responsive UI Table**: Tabular display of 5 crypto assets (BTC, ETH, USDT, XRP, SOL) with the following columns:
+  - `#`, `Logo`, `Name`, `Symbol`, `Price`
+  - `1h %`, `24h %`, `7d %` (color-coded)
+  - `Market Cap`, `24h Volume`, `Circulating Supply`, `Max Supply`, `7D Chart`
+- 🌈 **Color Coding**: Percentage values are green if positive and red if negative.
+- 📉 **Static 7D Chart**: Each coin has a pre-rendered 7-day line chart in SVG format.
+- 🌐 **Mobile-First Design**: Fully responsive layout using Tailwind’s utility classes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React (with Vite)
+- **Styling**: Tailwind CSS
+- **State Management**: Redux Toolkit + React Redux
+- **Data Source**: Static JSON file (`sampleData.json`) with 5 pre-defined assets
+- **Chart Rendering**: Static SVG charts (via [QuickChart.io](https://quickchart.io))
+
+---
+
+## 🧱 Project Architecture
+
+```
+/src
+│
+├── app
+│   └── store.js                # Redux store configuration
+│
+├── features
+│   └── crypto
+│       ├── cryptoSlice.js      # Redux slice for crypto state
+│       ├── sampleData.json     # Initial data used to populate state
+│       └── CryptoTable.jsx     # Main UI component (data table)
+│
+├── assets
+│   └── logos & SVGs            # Logos and 7D chart SVGs (in /public folder)
+│
+├── App.jsx                     # Root component
+└── main.jsx                    # App entry point (with Redux <Provider>)
+```
+
+---
+
+## 🧪 How Real-Time Works
+
+A `setInterval` inside a custom hook or component dispatches Redux actions every 1–2 seconds to simulate price/volume/percentage fluctuations using random values. No local state is used — all updates go through Redux.
+
+---
+
+## 🧰 Setup & Run
+
+```bash
+npm install
+npm run dev
+```
+
+Make sure you place your SVGs and logo images inside the `public/charts/` and `public/logos/` folders, respectively, and reference them in your JSON data.
+
+---
+
+## 📸 Demo Screenshot
+*(Add your screenshot here)*
+
+---
+
+> Made with ❤️ using React + Redux + Tailwind
+
